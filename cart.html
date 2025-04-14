@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Add these media queries to the existing style section -->
     <style>
         :root {
             --primary-color: #6366f1;
@@ -119,7 +120,64 @@
         .card-img:hover {
             transform: scale(1.05);
         }
-    </style>
+
+    @media (max-width: 991.98px) {
+        .container {
+            padding-top: 4rem;
+        }
+        
+        .card {
+            margin-bottom: 1rem;
+        }
+
+        #cartItems .row {
+            flex-direction: column;
+        }
+
+        #cartItems .col-md-3,
+        #cartItems .col-md-6 {
+            width: 100%;
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        #cartItems .col-md-3:last-child {
+            text-align: center;
+        }
+
+        .input-group {
+            margin: 0 auto;
+            margin-bottom: 1rem;
+        }
+
+        .card-img {
+            max-width: 200px;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        .card-title {
+            font-size: 1.1rem;
+        }
+
+        .input-group {
+            width: 120px;
+        }
+
+        .btn-outline-dark {
+            padding: 0.375rem 0.5rem;
+        }
+
+        .card-img {
+            max-width: 150px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+</style>
 </head>
 <body>
   <!-- Navigation (same as index.html) -->
@@ -180,18 +238,18 @@
         subtotal += item.price * item.quantity;
         return `
           <div class="card mb-3 shadow-sm">
-            <div class="row no-gutters align-items-center p-3">
-              <div class="col-md-3">
+            <div class="row no-gutters align-items-center p-2">
+              <div class="col-md-3 text-center">
                 <img src="${item.image}" 
-                     class="card-img" 
+                     class="card-img mb-md-0 mb-2" 
                      alt="${item.name}"
                      style="height: 120px; object-fit: cover; padding: 10px;">
               </div>
               <div class="col-md-6">
-                <div class="card-body p-0">
+                <div class="card-body p-2">
                   <h5 class="card-title mb-2">${item.name}</h5>
                   <p class="text-primary font-weight-bold mb-3">$${item.price.toFixed(2)}</p>
-                  <div class="input-group" style="width: 140px;">
+                  <div class="input-group mx-auto">
                     <button class="btn btn-outline-dark" onclick="updateQuantity(${index}, -1)">
                       <i class="fas fa-minus"></i>
                     </button>
@@ -206,11 +264,11 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-3 text-right">
-                <button class="btn btn-link text-danger" onclick="removeItem(${index})">
-                  <i class="fas fa-trash fa-lg"></i>
+              <div class="col-md-3 text-md-right text-center mt-md-0 mt-3">
+                <button class="btn btn-link text-danger mb-2" onclick="removeItem(${index})">
+                  <i class="fas fa-trash"></i> Remove
                 </button>
-                <p class="mt-2 mb-0">Total: <span class="text-primary">$${(item.price * item.quantity).toFixed(2)}</span></p>
+                <p class="mb-0">Total: <span class="text-primary">$${(item.price * item.quantity).toFixed(2)}</span></p>
               </div>
             </div>
           </div>

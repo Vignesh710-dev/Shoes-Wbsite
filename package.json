@@ -7,6 +7,30 @@
     "bootstrap-icons": "^1.11.3",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "mongoose": "^8.13.2",
     "razorpay": "^2.9.6"
+  },
+  "name": "shoes-wbsite",
+  "version": "1.0.0",
+  "description": "Shoes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vignesh710-dev/Shoes-Wbsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vignesh710-dev/Shoes-Wbsite/issues"
+  },
+  "homepage": "https://github.com/Vignesh710-dev/Shoes-Wbsite#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
   }
 }

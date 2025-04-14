@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running Shoes Collection</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #f6f8fd 0%, #e9edf7 100%);
+            padding: 6rem 0 3rem;
+            border-radius: 0 0 30px 30px;
+        }
+
+        .card {
+            border-radius: 20px;
+            overflow: hidden;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 100%;
+        }
+
+        .card-img-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img-container img {
+            transform: scale(1.1);
+        }
+
+        .btn-outline-dark {
+            border-radius: 25px;
+            padding: 8px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-dark:hover {
+            background: #000;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .price-tag {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .filters-bar {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top glass-nav p-0">
+        <div class="container-fluid px-3">
+            <a class="navbar-brand" href="index.html">
+                <img src="back-img/Screenshot_2025-04-14_182302-removebg-preview.png" class="img-section" alt="Agni Shoes Logo"/>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto text-center">
+                    <a class="nav-link ml-lg-3" href="index.html">Home</a>
+                    <a class="nav-link ml-lg-3" href="#">About Us</a>
+                    <a class="nav-link ml-lg-3" href="#">Categories</a>
+                    <a class="nav-link ml-lg-3" href="#">Trending</a>
+                    <a class="nav-link ml-lg-3" href="#">Contacts</a>
+                    <a class="nav-link ml-lg-3" href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge badge-danger" id="cartCount">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="container-fluid py-5 mt-5">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h1 class="display-4 mt-3" data-aos="fade-up">Running Shoes Collection</h1>
+                <p class="text-muted" data-aos="fade-up" data-aos-delay="100">Premium performance footwear for every runner</p>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="container">
+            <div class="row">
+                <!-- Product 1 -->
+                <div class=" col-6 col-md-4 mb-4" data-aos="fade-up">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Nike Zoom" class="card-img-top">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5>Nike Zoom Elite</h5>
+                            <p class="text-muted">Professional Running Shoes</p>
+                            <p class="text-primary font-weight-bold">$159.99</p>
+                            <button class="btn btn-outline-dark" onclick="addToCart('Nike Zoom Elite', 159.99, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class=" col-6 col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container">
+                            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa" alt="Adidas Boost" class="card-img-top">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5>Adidas Ultra Boost</h5>
+                            <p class="text-muted">Premium Running Shoes</p>
+                            <p class="text-primary font-weight-bold">$179.99</p>
+                            <button class="btn btn-outline-dark" onclick="addToCart('Adidas Ultra Boost', 179.99, 'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-6 col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container">
+                            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a" alt="Brooks Ghost" class="card-img-top">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5>Brooks Ghost 14</h5>
+                            <p class="text-muted">Distance Running Shoes</p>
+                            <p class="text-primary font-weight-bold">$149.99</p>
+                            <button class="btn btn-outline-dark" onclick="addToCart('Brooks Ghost 14', 149.99, 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-6 col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container">
+                            <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb" alt="New Balance Fresh Foam" class="card-img-top">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5>New Balance Fresh Foam</h5>
+                            <p class="text-muted">All-Day Comfort Running</p>
+                            <p class="text-primary font-weight-bold">$139.99</p>
+                            <button class="btn btn-outline-dark" onclick="addToCart('New Balance Fresh Foam', 139.99, 'https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-6 col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container">
+                            <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5" alt="Hoka One One" class="card-img-top">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5>Hoka One One Bondi 7</h5>
+                            <p class="text-muted">Maximum Cushioning</p>
+                            <p class="text-primary font-weight-bold">$164.99</p>
+                            <button class="btn btn-outline-dark" onclick="addToCart('Hoka One One Bondi 7', 164.99, 'https://images.unsplash.com/photo-1608231387042-66d1773070a5')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-6 col-md-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container">
+                            <img src="https://images.unsplash.com/photo-1582588678413-dbf45f4823e9" alt="Saucony Ride" class="card-img-top">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5>Saucony Ride 14</h5>
+                            <p class="text-muted">Neutral Running</p>
+                            <p class="text-primary font-weight-bold">$129.99</p>
+                            <button class="btn btn-outline-dark" onclick="addToCart('Saucony Ride 14', 129.99, 'https://images.unsplash.com/photo-1582588678413-dbf45f4823e9')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="col-6 col-md-4 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container">
+                            <img src="https://images.unsplash.com/photo-1605408499391-6368c628ef42" alt="Mizuno Wave" class="card-img-top">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5>Mizuno Wave Rider 25</h5>
+                            <p class="text-muted">High Performance</p>
+                            <p class="text-primary font-weight-bold">$144.99</p>
+                            <button class="btn btn-outline-dark" onclick="addToCart('Mizuno Wave Rider 25', 144.99, 'https://images.unsplash.com/photo-1605408499391-6368c628ef42')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="col-6 col-md-4 mb-4" data-aos="fade-up" data-aos-delay="700">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container">
+                            <img src="https://images.unsplash.com/photo-1600185652960-c9d8869d015c" alt="On Cloud" class="card-img-top">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5>On Cloud X</h5>
+                            <p class="text-muted">Lightweight Performance</p>
+                            <p class="text-primary font-weight-bold">$159.99</p>
+                            <button class="btn btn-outline-dark" onclick="addToCart('On Cloud X', 159.99, 'https://images.unsplash.com/photo-1600185652960-c9d8869d015c')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="col-6 col-md-4 mb-4" data-aos="fade-up" data-aos-delay="800">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container">
+                            <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de" alt="Under Armour HOVR" class="card-img-top">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5>Under Armour HOVR Infinite</h5>
+                            <p class="text-muted">Distance Running</p>
+                            <p class="text-primary font-weight-bold">$134.99</p>
+                            <button class="btn btn-outline-dark" onclick="addToCart('Under Armour HOVR Infinite', 134.99, 'https://images.unsplash.com/photo-1595341888016-a392ef81b7de')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="col-6 col-md-4 mb-4" data-aos="fade-up" data-aos-delay="900">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container">
+                            <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d" alt="Puma Velocity" class="card-img-top">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5>Puma Velocity Nitro</h5>
+                            <p class="text-muted">Speed Running</p>
+                            <p class="text-primary font-weight-bold">$124.99</p>
+                            <button class="btn btn-outline-dark" onclick="addToCart('Puma Velocity Nitro', 124.99, 'https://images.unsplash.com/photo-1491553895911-0055eca6402d')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        
+        // Cart functionality
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cartCount').textContent = totalItems;
+        }
+
+        // Initialize cart count
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
+</body>
+</html>
