@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top"  id="navbar-section-1">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="https://img.freepik.com/free-vector/hand-drawn-track-field-logo_23-2149223727.jpg?t=st=1743396933~exp=1743400533~hmac=ba7ae930ad747153e2434564f5f4ef1d8fb1086a91fc0e496cfd6dbbce2fd04b&w=740" class="img-section" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link vicky ml-3" href="#">Home</a>
+                <a class="nav-link ml-3" href="#">About Us</a>
+                <a class="nav-link ml-3" href="#">Categories</a>
+                <a class="nav-link ml-3" href="#">Trending</a>
+                <a class="nav-link ml-3" href="#">Contacts</a>
+                <a class="nav-link ml-3" href="cart.html">
+                  <i class="fas fa-shopping-cart"></i>
+                  <span class="badge badge-danger" id="cartCount">0</span>
+              </a>
+            </div>
+        </div>
+    </div>
+  </nav>
+  
+  <div class="shoes_back_image d-flex flex-column justify-content-center" data-aos="zoom-in">
+    <div class="text-center">     
+        <h1 class="main-heading mb-5" style="font-family: 'Times New Roman';">Make your move more<br class="mt-3">comfortable</h1>
+        <button class="btn bg-light" style="border-radius:5px;">Explore more</button>
+    </div>
+  </div>
+  
+  <!-- Enhanced About Us Section -->
+  <div class="p-5 mt-2" style="background-color:#f8f9fa;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
+                <h1 class="display-4 font-weight-bold  mb-3">ABOUT US</h1>
+                <div class="border-left border-primary pl-4 my-4">
+                    <h3 class="font-weight-bold">Premium Footwear For Every Step</h3>
+                </div>
+                <p class="lead">At our store, we're passionate about providing exceptional quality shoes that combine style, comfort, and durability.</p>
+                <p>Each pair is carefully selected from top brands to ensure you get the perfect fit for your lifestyle. Whether you're an athlete, professional, or fashion enthusiast, we have the ideal footwear for every occasion.</p>
+                <button class="btn btn-primary btn-lg mt-3"><a href="page2.html" class="text-white text-decoration-none">Discover Our Story</a></button>
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+                <div class="row">
+                    <div class="col-6 mb-4">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body text-center py-5">
+                                <i class="fas fa-medal fa-3x text-primary mb-3"></i>
+                                <h5>Quality</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-4">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body text-center py-5">
+                                <i class="fas fa-shipping-fast fa-3x text-primary mb-3"></i>
+                                <h5>Fast Delivery</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body text-center py-5">
+                                <i class="fas fa-tags fa-3x text-primary mb-3"></i>
+                                <h5>Best Prices</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body text-center py-5">
+                                <i class="fas fa-headset fa-3x text-primary mb-3"></i>
+                                <h5>24/7 Support</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <!-- NEW SECTION 1: Featured Products -->
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="" data-aos="fade-up">Featured Products</h2>
+        <p class="text-muted" data-aos="fade-up" data-aos-delay="100">Discover our most popular shoes</p>
+      </div>
+      
+      <!-- Existing Product Cards (1-4) -->
+      <!-- Product Card 2 -->
+      <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 shadow-sm">
+          <div class="card-img-container" style="height: 200px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772" class="card-img-top" alt="White Sneakers" style="object-fit: cover; height: 100%; width: 100%;">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Adidas Ultraboost</h5>
+            <p class="card-text text-muted">Casual Shoes</p>
+            <p class="text-primary font-weight-bold">$149.99</p>
+            <button class="btn btn-outline-dark btn-sm"  onclick="addToCart('Adidas Ultraboost', 149.99, 'https://images.unsplash.com/photo-1549298916-b41d501d3772')"><i class="fas fa-shopping-cart mr-2"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Product Card 3 -->
+      <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 shadow-sm">
+          <div class="card-img-container" style="height: 200px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a" class="card-img-top" alt="Sport Shoes" style="object-fit: cover; height: 100%; width: 100%;">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Puma RS-X</h5>
+            <p class="card-text text-muted">Sport Shoes</p>
+            <p class="text-primary font-weight-bold">$119.99</p>
+            <button class="btn btn-outline-dark btn-sm"onclick="addToCart('Puma RS-X', 199.99, 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a')"><i class="fas fa-shopping-cart mr-2"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Product Card 4 -->
+      <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card h-100 shadow-sm">
+          <div class="card-img-container" style="height: 200px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb" class="card-img-top" alt="Casual Shoes" style="object-fit: cover; height: 100%; width: 100%;">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">New Balance 574</h5>
+            <p class="card-text text-muted">Lifestyle Shoes</p>
+            <p class="text-primary font-weight-bold">$99.99</p>
+            <button class="btn btn-outline-dark btn-sm"onclick="addToCart('New Balance 574', 99.99, 'https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb')"><i class="fas fa-shopping-cart mr-2"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- NEW Product Card 5 -->
+      <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="card h-100 shadow-sm">
+          <div class="card-img-container" style="height: 200px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2" class="card-img-top" alt="Nike Air Jordan" style="object-fit: cover; height: 100%; width: 100%;">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Nike Air Jordan</h5>
+            <p class="card-text text-muted">Basketball Shoes</p>
+            <p class="text-primary font-weight-bold">$189.99</p>
+            <button class="btn btn-outline-dark btn-sm"onclick="addToCart('Nike Air Jordan', 189.99, 'https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2')"><i class="fas fa-shopping-cart mr-2"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- NEW Product Card 6 -->
+      <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 shadow-sm">
+          <div class="card-img-container" style="height: 200px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77" class="card-img-top" alt="Vans Old Skool" style="object-fit: cover; height: 100%; width: 100%;">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Vans Old Skool</h5>
+            <p class="card-text text-muted">Skateboarding Shoes</p>
+            <p class="text-primary font-weight-bold">$79.99</p>
+            <button class="btn btn-outline-dark btn-sm"onclick="addToCart('Vans Old Skool', 79.99, 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77')"><i class="fas fa-shopping-cart mr-2"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- NEW Product Card 7 -->
+      <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 shadow-sm">
+          <div class="card-img-container" style="height: 200px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f" class="card-img-top" alt="Converse Chuck Taylor" style="object-fit: cover; height: 100%; width: 100%;">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Converse Chuck Taylor</h5>
+            <p class="card-text text-muted">Classic Sneakers</p>
+            <p class="text-primary font-weight-bold">$69.99</p>
+            <button class="btn btn-outline-dark btn-sm"onclick="addToCart('Converse Chuck Taylor', 69.99, 'https://images.unsplash.com/photo-1543508282-6319a3e2621f')"><i class="fas fa-shopping-cart mr-2"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- NEW Product Card 8 -->
+      <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card h-100 shadow-sm">
+          <div class="card-img-container" style="height: 200px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d" class="card-img-top" alt="Nike Air Max 90" style="object-fit: cover; height: 100%; width: 100%;">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Nike Air Max 90</h5>
+            <p class="card-text text-muted">Retro Sneakers</p>
+            <p class="text-primary font-weight-bold">$139.99</p>
+            <button class="btn btn-outline-dark btn-sm"onclick="addToCart('Nike Air Max 90', 139.99, 'https://images.unsplash.com/photo-1491553895911-0055eca6402d')"><i class="fas fa-shopping-cart mr-2"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- NEW Product Card 9 -->
+      <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="card h-100 shadow-sm">
+          <div class="card-img-container" style="height: 200px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1539185441755-769473a23570" class="card-img-top" alt="Adidas Yeezy" style="object-fit: cover; height: 100%; width: 100%;">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Adidas Yeezy</h5>
+            <p class="card-text text-muted">Designer Sneakers</p>
+            <p class="text-primary font-weight-bold">$249.99</p>
+            <button class="btn btn-outline-dark btn-sm"onclick="addToCart('Adidas Yeezy', 249.99, 'https://images.unsplash.com/photo-1539185441755-769473a23570')"><i class="fas fa-shopping-cart mr-2"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- NEW Product Card 10 -->
+      <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 shadow-sm">
+          <div class="card-img-container" style="height: 200px; overflow: hidden;">
+            <img src="https://img.freepik.com/free-photo/shoes_1203-8155.jpg?t=st=1744617232~exp=1744620832~hmac=f135c3fe76de47be1c9b5aa8fad34608c1e6a89305ff238517560b05cef9a940&w=1060" class="card-img-top" alt="Under Armour HOVR" style="object-fit: cover; height: 100%; width: 100%;">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Under Armour HOVR</h5>
+            <p class="card-text text-muted">Performance Running</p>
+            <p class="text-primary font-weight-bold">$129.99</p>
+            <button class="btn btn-outline-dark btn-sm"onclick="addToCart('Under Armour HOVR', 129.99, 'https://images.unsplash.com/photo-1584735175315-9d5df23be620')"><i class="fas fa-shopping-cart mr-2"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="card h-100 shadow-sm">
+          <div class="card-img-container" style="height: 200px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de" class="card-img-top" alt="Reebok Classic" style="object-fit: cover; height: 100%; width: 100%;">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Reebok Classic</h5>
+            <p class="card-text text-muted">Retro Sneakers</p>
+            <p class="text-primary font-weight-bold">$109.99</p>
+            <button class="btn btn-outline-dark btn-sm"onclick="addToCart('Reebok Classic', 109.99, 'https://images.unsplash.com/photo-1595341888016-a392ef81b7de')"><i class="fas fa-shopping-cart mr-2"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+       <!-- NEW Product Card 12 -->
+       <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 shadow-sm">
+          <div class="card-img-container" style="height: 200px; overflow: hidden;">
+            <img src="https://img.freepik.com/free-photo/fashion-shoes-sneakers_1203-7528.jpg?t=st=1744616966~exp=1744620566~hmac=f10d551061ad4d543ceac196b5cce8344f7aceebbbb671a5014b6109c7fc61f0&w=1060" class="card-img-top" alt="Skechers" style="object-fit: cover; height: 100%; width: 100%;">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Skechers GoWalk</h5>
+            <p class="card-text text-muted">Comfort Walking</p>
+            <p class="text-primary font-weight-bold">$89.99</p>
+            <button class="btn btn-outline-dark btn-sm"onclick="addToCart('Skechers GoWalk', 89.99, 'https://img.freepik.com/free-photo/fashion-shoes-sneakers_1203-7528.jpg?t=st=1744616966~exp=1744620566~hmac=f10d551061ad4d543ceac196b5cce8344f7aceebbbb671a5014b6109c7fc61f0&w=1060')"><i class="fas fa-shopping-cart mr-2"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+       <!-- NEW Product Card 13 -->
+       <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 shadow-sm">
+          <div class="card-img-container" style="height: 200px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" class="card-img-top" alt="ASICS Running" style="object-fit: cover; height: 100%; width: 100%;">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">ASICS Gel-Kayano</h5>
+            <p class="card-text text-muted">Running Shoes</p>
+            <p class="text-primary font-weight-bold">$159.99</p>
+            <button class="btn btn-outline-dark btn-sm"onclick="addToCart('ASICS Gel-Kayano',159.99, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff')"><i class="fas fa-shopping-cart mr-2"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <!-- NEW SECTION 2: Categories -->
+    <div class="bg-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h2 class="" data-aos="fade-up">Shop by Category</h2>
+            <p class="text-muted" data-aos="fade-up" data-aos-delay="100">Find the perfect shoes for every occasion</p>
+          </div>
+          
+          <!-- Category 1 -->
+          <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card bg-dark text-white h-100">
+              <div class="category-card-img-container">
+                <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa" class="card-img" alt="Running Shoes">
+              </div>
+              <div class="card-img-overlay d-flex flex-column justify-content-end">
+                <h5 class="card-title">Running Shoes</h5>
+                <p class="card-text">Performance shoes for runners of all levels</p>
+                <a href="#" class="text-white">Shop Now <i class="fas fa-arrow-right ml-2"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Category 2 -->
+          <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card bg-dark text-white h-100">
+              <div class="category-card-img-container">
+                <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5" class="card-img" alt="Casual Shoes">
+              </div>
+              <div class="card-img-overlay d-flex flex-column justify-content-end">
+                <h5 class="card-title">Casual Shoes</h5>
+                <p class="card-text">Everyday comfort with stylish designs</p>
+                <a href="#" class="text-white">Shop Now <i class="fas fa-arrow-right ml-2"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Category 3 -->
+          <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="card bg-dark text-white h-100">
+              <div class="category-card-img-container">
+                <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329" class="card-img" alt="Sport Shoes">
+              </div>
+              <div class="card-img-overlay d-flex flex-column justify-content-end">
+                <h5 class="card-title">Sport Shoes</h5>
+                <p class="card-text">Designed for performance and durability</p>
+                <a href="#" class="text-white">Shop Now <i class="fas fa-arrow-right ml-2"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- NEW SECTION 3: Special Offers -->
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="display-5 font-weight-bold" data-aos="fade-up">Hot Deals</h2>
+          <p class="lead text-muted" data-aos="fade-up" data-aos-delay="100">Limited-time offers updated daily</p>
+        </div>
+    
+        <!-- Offer 1 -->
+        <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="modern-offer-card">
+            <div class="offer-badge">-50%</div>
+            <div class="offer-img-container">
+              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Sports Shoes Deal">
+            </div>
+            <div class="offer-content">
+              <h5>Sports Collection</h5>
+              <p class="text-muted">Premium performance<br> footwear</p>
+              <div class="price">
+                <span class="old-price">$199.99</span>
+                <span class="new-price">$99.99</span>
+              </div>
+              <button class="btn btn-dark btn-block mt-3">Shop Now</button>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Offer 2 -->
+        <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="modern-offer-card">
+            <div class="offer-badge">New</div>
+            <div class="offer-img-container">
+              <img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f" alt="Casual Sneakers">
+            </div>
+            <div class="offer-content">
+              <h5>Casual Styles</h5>
+              <p class="text-muted">Everyday comfort<br> collection</p>
+              <div class="price">
+                <span class="new-price">From $79.99</span>
+              </div>
+              <button class="btn btn-dark btn-block mt-3">Explore</button>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Offer 3 -->
+        <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="400">
+          <div class="modern-offer-card">
+            <div class="offer-badge">Flash Sale</div>
+            <div class="offer-img-container">
+              <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa" alt="Running Shoes">
+            </div>
+            <div class="offer-content">
+              <h5>Running Gear</h5>
+              <p class="text-muted">24-hour special<br> discount</p>
+              <div class="price">
+                <span class="old-price">$149.99</span>
+                <span class="new-price">$109.99</span>
+              </div>
+              <button class="btn btn-dark btn-block mt-3">Grab Deal</button>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Offer 4 -->
+        <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="500">
+          <div class="modern-offer-card">
+            <div class="offer-badge">Bundle</div>
+            <div class="offer-img-container">
+              <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2" alt="Shoe Bundle">
+            </div>
+            <div class="offer-content">
+              <h5>Family Pack</h5>
+              <p class="text-muted">3 pairs for price of 2<br> collection</p>
+              <div class="price">
+                <span class="new-price">$299.00</span>
+              </div>
+              <button class="btn btn-dark btn-block mt-3">Buy Bundle</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+   
+
+    </div>
+  </div>
+  
+  <!-- NEW SECTION 4: Testimonials -->
+  <div class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="" data-aos="fade-up">What Our Customers Say</h2>
+          <p class="text-muted" data-aos="fade-up" data-aos-delay="200">Read reviews from our satisfied customers</p>
+        </div>
+        
+        <!-- Testimonial 1 -->
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+              </div>
+              <p class="card-text">"These are the most comfortable running shoes I've ever owned. Great support and they look amazing!"</p>
+              <div class="mt-4">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle" width="60" alt="Customer">
+                <h6 class="mt-2 mb-0">Muneeswari</h6>
+                <small class="text-muted">Marathon Runner</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star-half-alt text-warning"></i>
+              </div>
+              <p class="card-text">"Fast shipping and excellent customer service. The shoes fit perfectly and are exactly as described online."</p>
+              <div class="mt-4">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle" width="60" alt="Customer">
+                <h6 class="mt-2 mb-0">Sabeen Kumar</h6>
+                <small class="text-muted">Fitness Instructor</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+              </div>
+              <p class="card-text">"I've bought several pairs from this store and have never been disappointed. Quality products at reasonable prices."</p>
+              <div class="mt-4">
+                <img src="https://randomuser.me/api/portraits/men/67.jpg" class="rounded-circle" width="60" alt="Customer">
+                <h6 class="mt-2 mb-0">Shiva Kumar</h6>
+                <small class="text-muted">Basketball Coach</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Existing footer -->
+  <footer class="bg-dark text-white mt-5">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>About Us</h5>
+                <p>Your premium shoe store for all your footwear needs.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white">Home</a></li>
+                    <li><a href="#" class="text-white">Shop</a></li>
+                    <li><a href="#" class="text-white">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contact</h5>
+                <p>Email: vigneshpk710@gmail.com</p>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/ac42c3b1f7.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script>
+    // Cart functionality
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const existingItem = cart.find(item => item.name === name);
+      
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        cart.push({
+          name: name,
+          price: price,
+          image: image,
+          quantity: 1
+        });
+      }
+      
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCounter();
+    }
+  
+    function updateCartCounter() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+      document.querySelectorAll('#cartCount').forEach(el => {
+        el.textContent = totalItems;
+      });
+    }
+  
+    // Initialize cart counter
+    window.addEventListener('DOMContentLoaded', updateCartCounter);
+  </script>
+</body>
+</html>

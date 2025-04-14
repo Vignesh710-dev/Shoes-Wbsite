@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking - Agni Shoes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .tracking-step {
+            position: relative;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 2px solid #dee2e6;
+        }
+        .tracking-step.active {
+            border-left: 2px solid #28a745;
+        }
+        .tracking-step::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 24px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid #dee2e6;
+        }
+        .tracking-step.active::before {
+            background: #28a745;
+            border-color: #28a745;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-4">
+                        <h4 class="mb-4">Order Tracking</h4>
+                        <div id="orderDetails" class="mb-4">
+                            <p class="mb-1"><strong>Order ID:</strong> <span id="orderId"></span></p>
+                            <p class="mb-1"><strong>Amount Paid:</strong> ₹<span id="orderAmount"></span></p>
+                        </div>
+                        
+                        <div class="tracking-timeline">
+                            <div class="tracking-step active">
+                                <h5>Order Confirmed</h5>
+                                <p class="text-muted">Your payment was successful</p>
+                            </div>
+                            <div class="tracking-step active">
+                                <h5>Processing</h5>
+                                <p class="text-muted">Your order is being processed</p>
+                            </div>
+                            <div class="tracking-step">
+                                <h5>Shipped</h5>
+                                <p class="text-muted">Order will be shipped soon</p>
+                            </div>
+                            <div class="tracking-step">
+                                <h5>Delivered</h5>
+                                <p class="text-muted">Estimated delivery in 3-5 days</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const orderId = localStorage.getItem('orderId');
+            const amount = localStorage.getItem('paymentAmount');
+            
+            document.getElementById('orderId').textContent = orderId || 'N/A';
+            document.getElementById('orderAmount').textContent = amount || '0.00';
+        });
+    </script>
+</body>
+</html>
