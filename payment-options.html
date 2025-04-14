@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Add these in the head section -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options - Shoe Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .payment-option {
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .payment-option:hover {
+            border-color: #007bff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .payment-option.selected {
+            border-color: #007bff;
+            background-color: #f8f9ff;
+        }
+        .payment-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<!-- Update the JavaScript section -->
+<script>
+    function selectPayment(method) {
+        selectedPayment = method;
+        document.querySelectorAll('.payment-option').forEach(option => {
+            option.classList.remove('selected');
+        });
+        event.currentTarget.classList.add('selected');
+        
+        // Show selection confirmation
+        Swal.fire({
+            icon: 'success',
+            title: 'Payment Method Selected',
+            text: `You selected ${method.toUpperCase()} payment option`,
+            timer: 1500,
+            showConfirmButton: false
+        });
+    }
+
+    function proceedToPayment() {
+        const amount = localStorage.getItem('paymentAmount') || '0.00';
+        
+        // Show loading state
+        Swal.fire({
+            title: 'Processing Payment',
+            text: 'Please wait...',
+            allowOutsideClick: false,
+            showConfirmButton: false,
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        });
+
+        const options = {
+            key: "rzp_test_Kd6pRCgzjidynQ",
+            amount: parseFloat(amount) * 100,
+            currency: "INR",
+            name: "Agni Shoes",
+            description: "Order Payment",
+            handler: function(response) {
+                if (response.razorpay_payment_id) {
+                    // Store order details
+                    localStorage.setItem('orderId', response.razorpay_payment_id);
+                    
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Payment Successful!',
+                        text: 'Redirecting to order tracking...',
+                        showConfirmButton: false,
+                        timer: 2000
+                    }).then(() => {
+                        localStorage.removeItem('cart');
+                        window.location.href = 'order-tracking.html';
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Payment Failed',
+                        text: 'Please try again or choose a different payment method.'
+                    });
+                }
+            },
+            modal: {
+                ondismiss: function() {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Payment Cancelled',
+                        text: 'You cancelled the payment process.'
+                    });
+                }
+            }
+        };
+
+        const rzp = new Razorpay(options);
+        rzp.open();
+        Swal.close(); // Close loading state when Razorpay opens
+    }
+
+    // Initialize payment amount with animation
+    document.addEventListener('DOMContentLoaded', function() {
+        const amount = localStorage.getItem('paymentAmount') || '0.00';
+        document.getElementById('payAmount').textContent = amount;
+        
+        Swal.fire({
+            icon: 'info',
+            title: 'Welcome to Checkout',
+            text: 'Please select your preferred payment method',
+            timer: 2000,
+            showConfirmButton: false
+        });
+    });
+</script>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-4">
+                        <h4 class="mb-4">Select Payment Method</h4>
+                        
+                        <!-- Ya Razorpay Option -->
+                        <div class="payment-option selected" onclick="selectPayment('yaRazorpay')">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-shield-alt payment-icon text-primary"></i>
+                                <div>
+                                    <h5 class="mb-1">Ya Razorpay</h5>
+                                    <p class="text-muted mb-2">Fast & Secure Payments</p>
+                                   
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- UPI Payment -->
+                        <div class="payment-option" onclick="selectPayment('upi')">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-mobile-alt payment-icon text-success"></i>
+                                <div>
+                                    <h5 class="mb-1">UPI Payment</h5>
+                                    <p class="text-muted mb-0">Pay using any UPI app</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Net Banking -->
+                        <div class="payment-option" onclick="selectPayment('netbanking')">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-university payment-icon text-info"></i>
+                                <div>
+                                    <h5 class="mb-1">Net Banking</h5>
+                                    <p class="text-muted mb-0">All major banks available</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <button onclick="proceedToPayment()" class="btn btn-primary btn-lg btn-block">
+                                Proceed to Pay ₹<span id="payAmount">0.00</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</body>
+</html>

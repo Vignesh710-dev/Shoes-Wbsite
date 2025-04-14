@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Shoe Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #4f46e5;
+            --success-color: #22c55e;
+            --background-color: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            background: var(--background-color);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+        }
+
+        .checkout-container {
+            padding: 40px 0;
+        }
+
+        .card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .form-control {
+            border-radius: 12px;
+            padding: 12px 16px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .summary-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            border: none;
+            border-radius: 12px;
+            padding: 14px 28px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+        }
+
+        .custom-control-input:checked ~ .custom-control-label::before {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        h4, h5 {
+            color: #1e293b;
+            font-weight: 700;
+        }
+
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .border-top {
+            border-top: 1px solid #e2e8f0 !important;
+        }
+
+        .spinner-border {
+            color: var(--primary-color);
+        }
+
+        label {
+            font-weight: 500;
+            color: #64748b;
+            margin-bottom: 8px;
+        }
+
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+<body class="checkout-container">
+    <div class="container py-5">
+        <div class="row">
+            <!-- Shipping Form -->
+            <div class="col-lg-7 mb-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="mb-4 font-weight-bold">Shipping Details</h4>
+                        <form id="checkoutForm">
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label>Full Name</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label>Email Address</label>
+                                    <input type="email" class="form-control" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label>Mobile Number</label>
+                                    <input type="tel" class="form-control" pattern="[0-9]{10}" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label>Pincode</label>
+                                    <input type="text" class="form-control" pattern="[0-9]{6}" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Complete Address</label>
+                                <textarea class="form-control" rows="3" required></textarea>
+                            </div>
+
+                            <div class="border-top pt-4 mt-4">
+                                <h5 class="mb-3 font-weight-bold">Payment Method</h5>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="razorpay" name="paymentMethod" 
+                                           class="custom-control-input" checked>
+                                    <label class="custom-control-label font-weight-bold" for="razorpay">
+                                        Razorpay - Secure Digital Payments
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block btn-lg mt-4">
+                                Continue to Payment
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="col-lg-5">
+                <div class="summary-card p-4">
+                    <h5 class="mb-4 font-weight-bold">Order Summary</h5>
+                    <div id="orderSummary" class="mb-3">
+                        <div id="cartItemsLoading" class="text-center py-3">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <p class="mt-2">Loading cart items...</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between font-weight-bold h5">
+                        <span>Total:</span>
+                        <span class="text-primary">₹<span id="orderTotal">0.00</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load cart items
+        function loadCartItems() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const orderSummary = document.getElementById('orderSummary');
+            const loadingElement = document.getElementById('cartItemsLoading');
+
+            if(cart.length === 0) {
+                orderSummary.innerHTML = `<div class="alert alert-warning">Your cart is empty</div>`;
+                return;
+            }
+
+            loadingElement.style.display = 'none';
+            
+            orderSummary.innerHTML = cart.map(item => `
+                <div class="d-flex mb-3 border-bottom pb-3">
+                    <img src="${item.image}" 
+                         class="rounded mr-3" 
+                         style="width: 80px; height: 80px; object-fit: cover">
+                    <div class="flex-grow-1">
+                        <h6 class="mb-1 font-weight-bold">${item.name}</h6>
+                        <div class="d-flex justify-content-between">
+                            <span class="text-muted">Qty: ${item.quantity}</span>
+                            <span class="font-weight-bold">₹${(item.price * item.quantity).toFixed(2)}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize cart and totals
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCartItems();
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            document.getElementById('orderTotal').textContent = total.toFixed(2);
+        });
+
+        // Razorpay Integration
+        // Replace the existing Razorpay integration code with:
+        // Razorpay Integration
+        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Save form data
+            const formData = {
+                name: document.querySelector('input[type="text"]').value,
+                email: document.querySelector('input[type="email"]').value,
+                phone: document.querySelector('input[type="tel"]').value,
+                address: document.querySelector('textarea').value,
+                total: document.getElementById('orderTotal').textContent
+            };
+        
+            // Store data for payment page
+            localStorage.setItem('shippingDetails', JSON.stringify(formData));
+            localStorage.setItem('paymentAmount', formData.total);
+        
+            // Redirect to payment options page
+            window.location.href = 'payment-options.html';
+        });
+        </script>
+    </script>
+</body>
+</html>
