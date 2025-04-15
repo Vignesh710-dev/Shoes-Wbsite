@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
 
 .shoes_back_image {
-    background-image: url('https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: url('https://img.freepik.com/premium-photo/sport-shoes-running-shoes-training-shoes-sneaker-isolated-white-background_620624-13361.jpg?w=1380');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -299,99 +299,4 @@
   background-color: #f8f9fa;
 }
 
-   /* Add at the top of your CSS file */
-.glass-nav {
-    background: rgba(255, 255, 255, 0.1) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
-
-.glass-nav .nav-link {
-    color: #000 !important;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.glass-nav .nav-link:hover {
-    color: #007bff !important;
-    transform: translateY(-2px);
-}
-
-.glass-nav .navbar-brand {
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-}
-
-.glass-nav .navbar-toggler {
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* Adjust the cart badge position */
-.glass-nav .badge {
-    position: relative;
-    top: -8px;
-    right: 5px;
-}
-
-
-/* Mobile responsive styles */
-@media (max-width: 991.98px) {
-    .glass-nav {
-        background: rgba(255, 255, 255, 0.95) !important;
-    }
-
-    .navbar-collapse {
-        background: rgba(255, 255, 255, 0.95);
-        padding: 1rem;
-        border-radius: 0 0 15px 15px;
-        margin-top: 0.5rem;
-    }
-
-    .nav-link {
-        padding: 0.7rem 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-link:last-child {
-        border-bottom: none;
-    }
-
-    .img-section {
-        width: 35px;
-        height: 45px;
-    }
-
-    /* Adjust product cards for mobile */
-    .card-img-container {
-        height: 180px;
-    }
-
-    /* Adjust testimonial cards for mobile */
-    .testimonial-card {
-        margin-bottom: 1.5rem;
-    }
-
-    /* Adjust category cards for mobile */
-    .category-card-img-container {
-        height: 250px;
-    }
-
-    /* Adjust offer cards for mobile */
-    .modern-offer-card {
-        margin-bottom: 2rem;
-    }
-}
-
-/* Small mobile devices */
-@media (max-width: 575.98px) {
-    .main-heading {
-        font-size: 2.5rem;
-    }
-
-    .container {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-}
+   
